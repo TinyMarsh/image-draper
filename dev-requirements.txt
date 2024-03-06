@@ -25,7 +25,7 @@ filelock==3.13.1
     # via
     #   pytest-mypy
     #   virtualenv
-identify==2.5.33
+identify==2.5.35
     # via pre-commit
 iniconfig==2.0.0
     # via pytest
@@ -84,7 +84,7 @@ shiboken6==6.6.2
     #   pyside6-essentials
 typing-extensions==4.9.0
     # via mypy
-virtualenv==20.25.0
+virtualenv==20.25.1
     # via pre-commit
 wheel==0.42.0
     # via pip-tools
