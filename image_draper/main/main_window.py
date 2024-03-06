@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
         image = image.convertToFormat(QImage.Format.Format_ARGB32)
 
         newImg = QImage(image.size(), QImage.Format.Format_ARGB32)
-        newImg.fill(Qt.transparent)
+        newImg.fill(Qt.GlobalColor.transparent)
         painter = QPainter(newImg)
 
         painter.setOpacity(0.5)
