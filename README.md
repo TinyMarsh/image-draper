@@ -8,47 +8,26 @@ This is a minimal Python 3.10 application that uses [`pip-tools`] for packaging 
 
 ## Usage
 
-To use this repository as a template for your own application:
-
-1. Click the green "Use this template" button above
-2. Name and create your repository
-3. Clone your new repository and make it your working directory
-4. Replace instances of `myproject` with your own application name. Edit:
-   - `pyproject.toml` (also change the list of authors here)
-   - `tests/test_myproject.py`
-   - Rename `myproject` directory
-5. Create and activate a Virtual Environment:
+1. Create and activate a Virtual Environment:
 
    ```bash
    python -m venv .venv
    source .venv/bin/activate # with Powershell on Windows: `.venv\Scripts\Activate.ps1`
    ```
 
-6. Install development requirements:
+2. Install requirements:
 
    ```bash
-   pip install -r dev-requirements.txt
+   pip install -r requirements.txt
    ```
 
-7. Install the git hooks:
+3. Run the main app:
 
    ```bash
-   pre-commit install
+   python -m image_draper
    ```
 
-8. Run the main app:
-
-   ```bash
-   python -m myproject
-   ```
-
-9. Run the tests:
-
-   ```bash
-   pytest
-   ```
-
-### Updating Dependencies
+## Updating Dependencies
 
 To add or remove dependencies:
 
@@ -62,25 +41,3 @@ To add or remove dependencies:
 To upgrade pinned versions, use the `--upgrade` flag with `pip-compile`.
 
 Versions can be restricted from updating within the `pyproject.toml` using standard python package version specifiers, i.e. `"black<23"` or `"pip-tools!=6.12.2"`
-
-### Customising
-
-All configuration can be customised to your preferences. The key places to make changes
-for this are:
-
-- The `pyproject.toml` file, where you can edit:
-  - The build system (change from setuptools to other packaging tools like [Hatch](https://hatch.pypa.io/) or [flit](https://flit.pypa.io/)).
-  - The python version.
-  - The project dependencies. Extra optional dependencies can be added by adding another list under `[project.optional-dependencies]` (i.e. `doc = ["mkdocs"]`).
-  - The `mypy` and `pytest` configurations.
-- The `.pre-commit-config.yaml` for pre-commit settings.
-- The `.github` directory for all the CI configuration.
-  - This repo uses `pre-commit.ci` to update pre-commit package versions and automatically merges those PRs with the `auto-merge.yml` workflow.
-  - Note that `pre-commit.ci` is an external service and free for open source repos. For private repos uncomment the commented portion of the `pre-commit_autoupdate.yml` workflow.
-
-[`pip-tools`]: https://pip-tools.readthedocs.io/en/latest/
-
-### Publishing
-
-The GitHub workflow includes an action to publish on release.
-To run this action, uncomment the commented portion of `publish.yml`, and modify the steps for the desired behaviour (publishing a Docker image, publishing to PyPI, deploying documentation etc.)
