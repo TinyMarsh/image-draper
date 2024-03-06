@@ -41,7 +41,7 @@ module = "tests.*"
 disallow_untyped_defs = false
 
 [tool.pytest.ini_options]
-addopts = "-v --mypy -p no:warnings --cov=myproject --cov-report=html --doctest-modules --ignore=myproject/__main__.py"
+addopts = "-v --mypy -p no:warnings --cov=image_draper --cov-report=html --doctest-modules --ignore=image_draper/__main__.py"
 
 [tool.ruff.lint]
 select = ["D", "E", "F", "I"] # pydocstyle, pycodestyle, Pyflakes, isort
