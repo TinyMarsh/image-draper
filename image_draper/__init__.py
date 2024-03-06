@@ -18,9 +18,7 @@ def run() -> None:
     app = QApplication(sys.argv)
 
     hidden_main_window = MainWindow()
-    hidden_main_window.setWindowFlag(Qt.WindowStaysOnTopHint)
+    hidden_main_window.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint)
     hidden_main_window.show()
-
-    # app.aboutToQuit.connect(hidden_main_window.close)
 
     sys.exit(app.exec())

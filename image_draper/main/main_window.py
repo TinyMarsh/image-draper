@@ -1,7 +1,7 @@
 """Code for the main window containing all the frames and menus of the GUI."""
 
-from PySide6.QtCore import QEvent, QPoint, QRect, Qt
-from PySide6.QtGui import QImage, QPainter, QPixmap
+from PySide6.QtCore import QPoint, QRect, Qt
+from PySide6.QtGui import QImage, QMouseEvent, QPainter, QPixmap, QResizeEvent
 from PySide6.QtWidgets import QLabel, QMainWindow, QSizeGrip
 
 
@@ -12,13 +12,13 @@ class MainWindow(QMainWindow):
         """Initialise the main window."""
         super().__init__()
 
-        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
         image = QImage()
         image.load("test.jpg")
-        image = image.convertToFormat(QImage.Format_ARGB32)
+        image = image.convertToFormat(QImage.Format.Format_ARGB32)
 
-        newImg = QImage(image.size(), QImage.Format_ARGB32)
+        newImg = QImage(image.size(), QImage.Format.Format_ARGB32)
         newImg.fill(Qt.transparent)
         painter = QPainter(newImg)
 
@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         painter.end()
 
         pixmap = QPixmap(newImg)
-        pixmap = pixmap.scaledToHeight(300, Qt.SmoothTransformation)
+        pixmap = pixmap.scaledToHeight(300, Qt.TransformationMode.SmoothTransformation)
 
         label = QLabel(self)
         label.setPixmap(pixmap)
@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(label)
 
-        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
         self.gripSize = 16
         self.grips = []
@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
             grip.resize(self.gripSize, self.gripSize)
             self.grips.append(grip)
 
-    def resizeEvent(self, event: QEvent) -> None:
+    def resizeEvent(self, event: QResizeEvent) -> None:
         """Handle the resize event."""
         QMainWindow.resizeEvent(self, event)
         rect = self.rect()
@@ -56,12 +56,12 @@ class MainWindow(QMainWindow):
         # bottom left
         self.grips[3].move(0, rect.bottom() - self.gripSize)
 
-    def mousePressEvent(self, event: QEvent) -> None:
+    def mousePressEvent(self, event: QMouseEvent) -> None:
         """Handle the mouse press event."""
-        self.oldPos = event.globalPos()
+        self.oldPos = event.globalPosition().toPoint()
 
-    def mouseMoveEvent(self, event: QEvent) -> None:
+    def mouseMoveEvent(self, event: QMouseEvent) -> None:
         """Handle the mouse move event."""
-        delta = QPoint(event.globalPos() - self.oldPos)
+        delta = QPoint(event.globalPosition().toPoint() - self.oldPos)
         self.move(self.x() + delta.x(), self.y() + delta.y())
-        self.oldPos = event.globalPos()
+        self.oldPos = event.globalPosition().toPoint()
