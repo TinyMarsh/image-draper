@@ -19,6 +19,13 @@ jobs:
         python-version: [ "3.10", "3.11" ]
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install Dependencies (Linux)
+      run: |
+        sudo apt update
+        sudo apt-get install -y libegl1
+      if: matrix.os == 'ubuntu-latest'
+
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
