@@ -24,7 +24,7 @@ This is a minimal Python 3.10 application that uses [`pip-tools`] for packaging 
 3. Run the main app:
 
    ```bash
-   python -m myproject
+   python -m image_draper
    ```
 
 ## Updating Dependencies
