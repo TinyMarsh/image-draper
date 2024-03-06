@@ -2,10 +2,6 @@
 
 [![Test and build](https://github.com/TinyMarsh/image-draper/actions/workflows/ci.yml/badge.svg)](https://github.com/TinyMarsh/image-draper/actions/workflows/ci.yml)
 
-This is a minimal Python 3.10 application that uses [`pip-tools`] for packaging and dependency management. It also provides [`pre-commit`](https://pre-commit.com/) hooks (for for [ruff](https://pypi.org/project/ruff/) and [`mypy`](https://mypy.readthedocs.io/en/stable/)) and automated tests using [`pytest`](https://pytest.org/) and [GitHub Actions](https://github.com/features/actions). Pre-commit hooks are automatically kept updated with a dedicated GitHub Action, this can be removed and replace with [pre-commit.ci](https://pre-commit.ci) if using an public repo. It was developed by the [Imperial College Research Computing Service](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/).
-
-[`pip-tools`] is chosen as a lightweight dependency manager that adheres to the [latest standards](https://peps.python.org/pep-0621/) using `pyproject.toml`.
-
 ## Usage
 
 1. Create and activate a Virtual Environment:
@@ -27,7 +23,15 @@ This is a minimal Python 3.10 application that uses [`pip-tools`] for packaging 
    python -m image_draper
    ```
 
-## Updating Dependencies
+## Development
+
+This is a Python application that uses [`pip-tools`] for packaging and dependency management. It also provides [`pre-commit`](https://pre-commit.com/) hooks for [ruff](https://pypi.org/project/ruff/) and automated tests using [`pytest`](https://pytest.org/) and [GitHub Actions](https://github.com/features/actions). Pre-commit hooks are automatically kept updated with a dedicated GitHub Action.
+
+[`pip-tools`] is chosen as a lightweight dependency manager that adheres to the [latest standards](https://peps.python.org/pep-0621/) using `pyproject.toml`.
+
+Setup your environment by installing dependencies from `dev-requirements.txt`.
+
+### Updating Dependencies
 
 To add or remove dependencies:
 
