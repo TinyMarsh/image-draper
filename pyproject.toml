@@ -24,7 +24,8 @@ dev = [
     "pytest",
     "pytest-cov",
     "pytest-mypy",
-    "pytest-mock"
+    "pytest-mock",
+    "pyside6-stubs",
 ]
 
 [tool.mypy]
