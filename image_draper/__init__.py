@@ -7,18 +7,22 @@ Run the software with: python -m image_draper.
 
 import sys
 
-from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication
+
+from .main.size_grip_widget import SizeGripWidget
+from .main.transparent_image import TransparentImage
 
 
 def run() -> None:
     """Main entry point to program."""
-    from .main.main_window import MainWindow
-
     app = QApplication(sys.argv)
 
-    hidden_main_window = MainWindow()
-    hidden_main_window.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint)
-    hidden_main_window.show()
+    transparent_image = TransparentImage()
+    transparent_image.show()
 
-    sys.exit(app.exec())
+    size_grip_widget = SizeGripWidget(transparent_image)
+    size_grip_widget.show()
+
+    app.exec()
+
+    sys.exit()
