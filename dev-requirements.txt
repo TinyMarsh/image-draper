@@ -29,7 +29,7 @@ identify==2.5.35
     # via pre-commit
 iniconfig==2.0.0
     # via pytest
-mypy==1.8.0
+mypy==1.9.0
     # via
     #   datahub (pyproject.toml)
     #   pyside6-stubs
