@@ -82,7 +82,7 @@ pyyaml==6.0.1
     # via pre-commit
 ruff==0.3.4
     # via datahub (pyproject.toml)
-shiboken6==6.6.3
+shiboken6==6.7.0
     # via
     #   pyside6
     #   pyside6-addons
