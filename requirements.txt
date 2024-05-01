@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-pyside6==6.6.3
+pyside6==6.7.0
     # via datahub (pyproject.toml)
 pyside6-addons==6.6.3
     # via pyside6
