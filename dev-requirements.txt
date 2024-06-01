@@ -60,7 +60,7 @@ pyside6==6.7.0
     #   pyside6-stubs
 pyside6-addons==6.7.0
     # via pyside6
-pyside6-essentials==6.7.0
+pyside6-essentials==6.7.1
     # via
     #   pyside6
     #   pyside6-addons
