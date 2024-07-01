@@ -66,7 +66,7 @@ pyside6-essentials==6.7.2
     #   pyside6-addons
 pyside6-stubs==6.4.2.0
     # via datahub (pyproject.toml)
-pytest==8.2.0
+pytest==8.2.2
     # via
     #   datahub (pyproject.toml)
     #   pytest-cov
