@@ -54,7 +54,7 @@ pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
-pyside6==6.7.0
+pyside6==6.7.2
     # via
     #   datahub (pyproject.toml)
     #   pyside6-stubs
